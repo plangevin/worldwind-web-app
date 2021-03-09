@@ -75,15 +75,13 @@ $(document).ready(function () {
     enabled: false,
     detailControl: 1.5
   });
-  globe.addLayerFromWms("https://tiles.maps.eox.at/wms", "osm", {
+/*  globe.addLayerFromWms("https://tiles.maps.eox.at/wms", "osm", {
     category: "base",
     enabled: false
-  });
-  globe.addLayerFromWms("https://cartes.geogratis.gc.ca/wms/elevation_fr?service=WMS&version=1.3.0&request=GetCapabilities&layers=cdem.color-shaded-relief&legend_format=image/png&feature_info_type=text/html", "NRCAN", {
-    category: "overlay",
-    enabled: false,
-    detailControl: 1.5,
-    opacity: 0.80
+  });*/
+  globe.addLayerFromWms("https://cartes.geogratis.gc.ca/wms/elevation_fr?service=WMS&version=1.3.0&request=GetCapabilities&layers=cdem.color-shaded-relief&legend_format=image/png&feature_info_type=text/html", "osm", {
+    category: "base",
+    enabled: false
   });
   globe.addLayer(new WorldWind.BingRoadsLayer(), {
     category: "overlay",
@@ -91,12 +89,18 @@ $(document).ready(function () {
     detailControl: 1.5,
     opacity: 0.80
   });
-  globe.addLayerFromWms("https://tiles.maps.eox.at/wms", "overlay", {
+  globe.addLayerFromWms("https://cartes.geogratis.gc.ca/wms/elevation_fr?service=WMS&version=1.3.0&request=GetCapabilities&layers=cdem.color-shaded-relief&legend_format=image/png&feature_info_type=text/html", "overlay", {
+    category: "overlay",
+    displayName: "NRCAN",
+    enabled: false,
+    opacity: 0.80
+  });
+/*  globe.addLayerFromWms("https://tiles.maps.eox.at/wms", "overlay", {
     category: "overlay",
     displayName: "OpenStreetMap overlay by EOX",
     enabled: false,
     opacity: 0.80
-  });
+  });*/
   globe.addLayer(new WorldWind.RenderableLayer("Markers"), {
     category: "data",
     displayName: "Markers",
