@@ -79,8 +79,7 @@ $(document).ready(function () {
     category: "base",
     enabled: false
   });
-  globe.addLayerFromWms("https://cartes.geogratis.gc.ca/wms/elevation_fr?service=WMS&version=1.3.0&request=GetCapabilities&layers=cdem.color-shaded-relief&legend_format=image/png&feature_info_type=text/html", "NRCAN"
-  {
+  globe.addLayerFromWms("https://cartes.geogratis.gc.ca/wms/elevation_fr?service=WMS&version=1.3.0&request=GetCapabilities&layers=cdem.color-shaded-relief&legend_format=image/png&feature_info_type=text/html", "NRCAN", {
     category: "overlay",
     enabled: false,
     detailControl: 1.5,
