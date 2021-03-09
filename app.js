@@ -75,6 +75,11 @@ $(document).ready(function () {
     enabled: false,
     detailControl: 1.5
   });
+  globe.addLayerFromWms("https://cartes.geogratis.gc.ca/wms/elevation_fr?service=WMS&version=1.3.0&request=GetCapabilities&layers=cdem.color-shaded-relief&legend_format=image/png&feature_info_type=text/html", "nrcan",
+  {
+    category: "base",
+    enabled: false
+  });
   globe.addLayerFromWms("https://tiles.maps.eox.at/wms", "osm", {
     category: "base",
     enabled: false
